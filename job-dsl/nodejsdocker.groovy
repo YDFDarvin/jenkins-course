@@ -1,6 +1,6 @@
 job('NodeJS Docker example COURSE') {
     scm {
-        git('git://github.com/ydfd/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
+        git('git://github.com/YDFDarvin/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('Serhii Andrukh')
             node / gitConfigEmail('serhii.andrukh@blood-punk.com')
         }
@@ -14,7 +14,7 @@ job('NodeJS Docker example COURSE') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('YDFDarvin/docker-nodejs-example')
+            repositoryName('ydfd/docker-nodejs-example')
             tag('${GIT_REVISION,length=9}')
             registryCredentials('dockerhub')
             forcePull(false)
